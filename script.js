@@ -1,46 +1,57 @@
+// Tab Switching Function
 function switchTab(evt, tabName) {
-  const tabs = document.querySelectorAll('.tab-content');
-  const buttons = document.querySelectorAll('.tab');
+  // Hide all tab content
+  const tabContents = document.querySelectorAll(".tab-content");
+  tabContents.forEach(tab => tab.classList.remove("active"));
 
-  tabs.forEach(tab => tab.classList.remove('active'));
-  buttons.forEach(btn => btn.classList.remove('active'));
+  // Remove 'active' from all tab buttons
+  const tabButtons = document.querySelectorAll(".tab");
+  tabButtons.forEach(btn => btn.classList.remove("active"));
 
-  document.getElementById(tabName).classList.add('active');
-  evt.currentTarget.classList.add('active');
+  // Show the selected tab content and set button to active
+  const selectedTab = document.getElementById(tabName);
+  if (selectedTab) selectedTab.classList.add("active");
+
+  evt.currentTarget.classList.add("active");
 }
 
 function toggleReadMore(button) {
-  const paragraph = button.previousElementSibling;
-  const allTexts = button.closest(".process-grid").querySelectorAll(".more-text");
-  const allButtons = button.closest(".process-grid").querySelectorAll(".read-more-btn");
-
-  allTexts.forEach(p => {
-    if (p !== paragraph) p.classList.remove("show");
+  // Close all other expanded sections
+  const allCards = document.querySelectorAll('.card');
+  allCards.forEach(card => {
+    if (card.contains(button)) return; // skip the one that was clicked
+    const extraContent = card.querySelector('.extra-content');
+    if (extraContent) extraContent.style.display = 'none';
+    const btn = card.querySelector('.read-more-btn');
+    if (btn) btn.textContent = 'Read More';
   });
-  allButtons.forEach(btn => {
-    if (btn !== button) btn.textContent = "Read More";
-  });
 
-  paragraph.classList.toggle("show");
-  button.textContent = paragraph.classList.contains("show") ? "^^" : "Read More";
+  // Toggle the current one
+  const moreText = button.previousElementSibling.querySelector('.extra-content');
+  if (moreText) {
+    const isVisible = moreText.style.display === 'block';
+    moreText.style.display = isVisible ? 'none' : 'block';
+    button.textContent = isVisible ? 'Read More' : 'Read Less';
+  }
 }
+
+
+// Show Payment Popup
 function showPopup(type) {
-  document.getElementById(`popup-${type}`).style.display = 'block';
+  document.getElementById(`popup-${type}`).style.display = "block";
 }
 
+// Close Payment Popup
 function closePopup(type) {
-  document.getElementById(`popup-${type}`).style.display = 'none';
+  document.getElementById(`popup-${type}`).style.display = "none";
 }
 
-// Optional: Close popup when clicking outside
-window.addEventListener('click', function(e) {
-  ['mpesa', 'paypal', 'bank'].forEach(type => {
-    const popup = document.getElementById(`popup-${type}`);
-    if (e.target === popup) {
-      popup.style.display = 'none';
+// Close popups when clicking outside
+window.onclick = function(event) {
+  const popups = document.querySelectorAll(".popup");
+  popups.forEach(popup => {
+    if (event.target === popup) {
+      popup.style.display = "none";
     }
   });
-});
-function toggleDarkMode() {
-  document.body.classList.toggle("dark");
-}
+};

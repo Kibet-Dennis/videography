@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -13,132 +12,256 @@
     <h1>Our Process</h1>
 
     <div class="tabs">
+      <button class="tab" onclick="switchTab(event, 'streaming')">Streaming</button>
       <button class="tab active" onclick="switchTab(event, 'photography')">Photography</button>
       <button class="tab" onclick="switchTab(event, 'videography')">Videography</button>
       <button class="tab" onclick="switchTab(event, 'branding')">Branding</button>
       <button class="tab" onclick="switchTab(event, 'payments')">Payments</button>
     </div>
 
-    <!-- Tab Content Sections -->
+    <!-- Streaming -->
+    <div id="streaming" class="tab-content">
+      <div class="process-grid">
+        <div class="card neon-purple">
+          <h2><i class="fas fa-microphone"></i> Consultation</h2>
+          <p class="more-text">
+            We discuss your streaming needs, platform, and audience.
+            <span class="extra-content" style="display: none;">
+              We take time to understand your goals—whether you're building community, growing your brand, or monetizing content. We advise on the best platform and tools to deliver high-quality streams that resonate and convert.
+            </span>
+          </p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-orange">
+          <h2><i class="fas fa-cog"></i> Setup</h2>
+          <p class="more-text">
+            We configure your streaming software and hardware for optimal performance.
+            <span class="extra-content">
+              From camera and mic selection to OBS settings, lighting setups, and backup systems—we ensure professional-grade quality and reliability. You'll have confidence in every broadcast.
+            </span>
+          </p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-green">
+          <h2><i class="fas fa-video"></i> Live Streaming</h2>
+          <p class="more-text">
+            We go live with professional quality and real-time interaction.
+            <span class="extra-content">
+              Our team manages everything—scene switching, chat moderation, overlays—so you can focus fully on connecting with your audience and delivering great content.
+            </span>
+          </p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-blue">
+          <h2><i class="fas fa-chart-line"></i> Post-Stream Analysis</h2>
+          <p class="more-text">
+            We provide insights on viewer engagement and performance.
+            <span class="extra-content">
+              Get detailed analytics on viewer behavior, peak engagement times, and content performance. We recommend actionable tips to grow your audience and improve future streams.
+            </span>
+          </p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photography -->
     <div id="photography" class="tab-content active">
       <div class="process-grid">
         <div class="card neon-purple">
           <h2><i class="fas fa-comments"></i> Consultation</h2>
-          <p class="more-text">We plan your photography concept with vision, location, and mood board ideas.</p>
+          <p class="more-text">
+            We plan your concept, vision, and mood board.
+            <span class="extra-content">
+              Together, we clarify your style, audience, desired outcome, and mood. We explore locations, props, and poses that align with your brand or personal story.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-orange">
           <h2><i class="fas fa-calendar-alt"></i> Shoot Planning</h2>
-          <p class="more-text">We arrange lighting, schedule, and shot list before your shoot day.</p>
+          <p class="more-text">
+            We schedule, light, and storyboard.
+            <span class="extra-content">
+              Every detail—timing, lighting direction, shot progression, wardrobe and backup plans—is mapped out so your shoot flows smoothly and minimizes stress.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-green">
           <h2><i class="fas fa-camera"></i> Photography Session</h2>
-          <p class="more-text">Professional and creative execution of your photoshoot.</p>
+          <p class="more-text">
+            We execute your photoshoot creatively and professionally.
+            <span class="extra-content">
+              Our photographers guide you with posing, expressions, and movement to capture full of personality. We combine technical skill and creative vision to create stunning, authentic images.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-blue">
           <h2><i class="fas fa-edit"></i> Editing</h2>
-          <p class="more-text">Post-processing and enhancement to ensure each image is flawless and on-brand.</p>
+          <p class="more-text">
+            We enhance each image to perfection.
+            <span class="extra-content">
+              Color correction, retouching, background clean-up, and artistic styling ensure every photo aligns with your aesthetic and is ready for any use.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-lightgreen">
           <h2><i class="fas fa-check-circle"></i> Delivery</h2>
-          <p class="more-text">We deliver polished photos in print and web formats with full usage rights.</p>
+          <p class="more-text">
+            We provide final photos with full rights.
+            <span class="extra-content">
+              Receive high-resolution files for print and web, plus social formats. You’ll have full usage rights and clear organization for effortless use.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
       </div>
     </div>
 
-    <!-- Videography Section -->
+    <!-- Videography -->
     <div id="videography" class="tab-content">
       <div class="process-grid">
         <div class="card neon-orange">
-          <h2><i class="fas fa-lightbulb"></i> Pre-Production</h2>
-          <p class="more-text">Concept development, scripting, storyboarding, and location planning.</p>
+          <h2><i class="fas fa-lightbulb"></i> Pre‑Production</h2>
+          <p class="more-text">
+            We develop concept, script, and storyboard.
+            <span class="extra-content">
+              This is where we sharpen your message. We handle scripting, shot planning, location scouting, gear and crew prep.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-green">
           <h2><i class="fas fa-video"></i> Shooting</h2>
-          <p class="more-text">Capturing cinematic footage using professional gear and crew.</p>
+          <p class="more-text">
+            We capture cinematic footage professionally.
+            <span class="extra-content">
+              Using quality equipment and lighting, we direct each scene with attention to framing, movement, and emotion—making sure your story comes through.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-blue">
-          <h2><i class="fas fa-tools"></i> Post-Production</h2>
-          <p class="more-text">Editing, color grading, sound design, and graphics enhancement.</p>
+          <h2><i class="fas fa-tools"></i> Post‑Production</h2>
+          <p class="more-text">
+            We edit, grade, and design sound & graphics.
+            <span class="extra-content">
+              Our editors refine pacing, colors, audio mixing, and motion graphics to craft an immersive and polished final video.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-lightgreen">
           <h2><i class="fas fa-paper-plane"></i> Final Delivery</h2>
-          <p class="more-text">We deliver high-quality video in desired formats, optimized for platforms.</p>
+          <p class="more-text">
+            We hand over your optimized video.
+            <span class="extra-content">
+              We deliver in the target formats—YouTube, social media, website—along with captions, thumbnails, and usage tips to maximize impact.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
       </div>
     </div>
 
-    <!-- Branding Section -->
-      <div id="branding" class="tab-content">
-        <div class="process-grid">
-          <div class="card neon-purple">
-            <h2><i class="fas fa-search"></i> Discovery</h2>
-            <p>We analyze your brand's vision, mission, and values to create a unique identity.</p>
-            <span class="more-text">
-              <br><strong>Deliverables:</strong> Brand strategy document, mood board.
-              <br><strong>Duration:</strong> 1-2 weeks
+    <!-- Branding -->
+    <div id="branding" class="tab-content">
+      <div class="process-grid">
+        <div class="card neon-purple">
+          <h2><i class="fas fa-search"></i> Discovery</h2>
+          <p class="more-text">
+            We dive into your vision, mission, and ideals.
+            <span class="extra-content">
+              Through interviews and market research, we outline your story and audience perception, creating a brand foundation that resonates.
             </span>
           </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-orange">
           <h2><i class="fas fa-paint-brush"></i> Concept Design</h2>
-          <p class="more-text">We create logo concepts, typography, and brand colors for review.</p>
+          <p class="more-text">
+            We craft logos, typography, and color palettes.
+            <span class="extra-content">
+              You get multiple unique design directions to pick and refine—ensuring your visuals are both memorable and aligned with your identity.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-green">
           <h2><i class="fas fa-sync"></i> Revisions</h2>
-          <p class="more-text">We refine the designs based on your feedback to reach the final product.</p>
+          <p class="more-text">
+            We polish designs based on your feedback.
+            <span class="extra-content">
+              Up to 3 rounds of feedback ensure we hone your brand assets until you’re thrilled with the outcome.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-blue">
           <h2><i class="fas fa-gift"></i> Final Delivery</h2>
-          <p class="more-text">Delivery of brand assets including logos, guides, and templates.
-            <br><strong>Formats:</strong> AI, PSD, PNG, JPG, PDF
+          <p class="more-text">
+            We deliver brand assets and guides.
+            <span class="extra-content">
+              You’ll receive editable files (AI, PSD), record of brand colors and fonts, and usage guidelines to maintain consistency across all media.
+            </span>
           </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
       </div>
     </div>
 
-    <!-- Payments Section -->
+    <!-- Payments -->
     <div id="payments" class="tab-content">
       <div class="process-grid">
         <div class="card neon-orange">
           <h2><i class="fas fa-file-invoice"></i> Quotation & Agreement</h2>
-          <p class="more-text">We provide a detailed quote and sign off on the project terms.</p>
+          <p class="more-text">
+            We provide a detailed quote and terms.
+            <span class="extra-content">
+              We break down costs, deliverables, and timelines clearly—so you know exactly what to expect with no surprises.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-green">
           <h2><i class="fas fa-wallet"></i> Deposit</h2>
-          <p class="more-text">A 50% upfront payment is required to confirm your project slot.</p>
+          <p class="more-text">
+            A 50% upfront payment reserves your slot.
+            <span class="extra-content">
+              This secures scheduling and allows us to allocate necessary resources right away—without delay.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-blue">
           <h2><i class="fas fa-money-check-alt"></i> Final Payment</h2>
-          <p class="more-text">The remaining balance is due upon final delivery of your project.</p>
+          <p class="more-text">
+            Balance due at delivery.
+            <span class="extra-content">
+              Only pay once you're fully satisfied with deliverables and we've met all agreed expectations.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
         <div class="card neon-purple">
-          <h2><i class="fas fa-cogs"></i> Service Execution</h2>
-          <p class="more-text">We deliver the agreed services professionally and keep you involved with progress updates, sample reviews, and timelines.</p>
+          <h2><i class="fas fa-cogs"></i> Execution & Updates</h2>
+          <p class="more-text">
+            We work closely with you throughout.
+            <span class="extra-content">
+              Receive regular updates, sample reviews, and milestone check-ins—ensuring transparency and confidence every step of the way.
+            </span>
+          </p>
           <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
         </div>
       </div>
-
-      <!-- Choose Payment Method (Centered Card) -->
+ 
       <div class="payment-method-wrapper">
         <div class="payment-method-card">
           <h2><i class="fas fa-credit-card"></i> Choose Payment Method</h2>
-          <p>Click your preferred payment method below to view details:</p>
+          <p>Click your preferred method below for details:</p>
           <div class="payment-buttons">
             <button class="mpesa-btn" onclick="showPopup('mpesa')">M-Pesa</button>
             <button class="paypal-btn" onclick="showPopup('paypal')">PayPal</button>
@@ -149,7 +272,7 @@
     </div>
   </div>
 
-  <!-- POPUPS -->
+  <!-- Popups -->
   <div id="popup-mpesa" class="popup">
     <div class="popup-content">
       <span class="close" onclick="closePopup('mpesa')">&times;</span>
@@ -159,8 +282,7 @@
       <p><strong>Account:</strong> Your Name or Invoice Number</p>
     </div>
   </div>
-
-  <div id="popup-paypal" class="popup">
+ <div id="popup-paypal" class="popup">
     <div class="popup-content">
       <span class="close" onclick="closePopup('paypal')">&times;</span>
       <h3>PayPal Payment</h3>
@@ -168,23 +290,20 @@
       <p><strong>Email:</strong> gurucreations@example.com</p>
     </div>
   </div>
-
-  <div id="popup-bank" class="popup">
+ <div id="popup-bank" class="popup">
     <div class="popup-content">
       <span class="close" onclick="closePopup('bank')">&times;</span>
       <h3>Bank Transfer</h3>
       <p><strong>Bank:</strong> XYZ Bank</p>
-      <p><strong>Account Number:</strong> 00123456789</p>
+      <p><strong>Account No.:</strong> 00123456789</p>
       <p><strong>Account Name:</strong> Guru Creations</p>
     </div>
   </div>
-
-  <!-- Footer -->
-  <footer>
+   <footer>
     <p>Created by <strong>Kibet Dennis</strong></p>
     <p>&copy; 2025 Guru Creations. All rights reserved.</p>
-  </footer>
+   </footer>
 
   <script src="script.js"></script>
- </body>
- </html>
+</body>
+</html>
