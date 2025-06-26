@@ -1,46 +1,46 @@
-// Toggle tab content visibility
-function showTab(tabId) {
-  const tabs = document.querySelectorAll(".tab-content");
-  const buttons = document.querySelectorAll(".tab-btn");
+function switchTab(evt, tabName) {
+  const tabs = document.querySelectorAll('.tab-content');
+  const buttons = document.querySelectorAll('.tab');
 
-  tabs.forEach(tab => tab.classList.remove("active"));
-  buttons.forEach(btn => btn.classList.remove("active"));
+  tabs.forEach(tab => tab.classList.remove('active'));
+  buttons.forEach(btn => btn.classList.remove('active'));
 
-  document.getElementById(tabId).classList.add("active");
-  document.querySelector(`.tab-btn[onclick="showTab('${tabId}')"]`).classList.add("active");
-
-  // Hide payment section when switching tabs
-  document.getElementById("payment").style.display = "none";
+  document.getElementById(tabName).classList.add('active');
+  evt.currentTarget.classList.add('active');
 }
 
-// Toggle "Read More" text visibility
 function toggleReadMore(button) {
   const paragraph = button.previousElementSibling;
-  const isShown = paragraph.classList.contains("show");
+  const allTexts = button.closest(".process-grid").querySelectorAll(".more-text");
+  const allButtons = button.closest(".process-grid").querySelectorAll(".read-more-btn");
 
-  // Close all others
-  document.querySelectorAll(".more-text").forEach(p => p.classList.remove("show"));
-  document.querySelectorAll(".read-more-btn").forEach(btn => btn.textContent = "Read More");
+  allTexts.forEach(p => {
+    if (p !== paragraph) p.classList.remove("show");
+  });
+  allButtons.forEach(btn => {
+    if (btn !== button) btn.textContent = "Read More";
+  });
 
-  if (!isShown) {
-    paragraph.classList.add("show");
-    button.textContent = "^";
-  }
+  paragraph.classList.toggle("show");
+  button.textContent = paragraph.classList.contains("show") ? "Show Less" : "Read More";
+}
+function showPopup(type) {
+  document.getElementById(`popup-${type}`).style.display = 'block';
 }
 
-// Toggle payment section visibility
-function togglePayment() {
-  const paymentSection = document.getElementById("payment");
-  const isVisible = paymentSection.style.display === "block";
-
-  // Hide all tab content
-  document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
-  document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
-
-  paymentSection.style.display = isVisible ? "none" : "block";
+function closePopup(type) {
+  document.getElementById(`popup-${type}`).style.display = 'none';
 }
-// Toggle icon visibility
-function toggleIcon(iconId) {
-  const icon = document.getElementById(iconId);
-  icon.classList.toggle("active");
- }
+
+// Optional: Close popup when clicking outside
+window.addEventListener('click', function(e) {
+  ['mpesa', 'paypal', 'bank'].forEach(type => {
+    const popup = document.getElementById(`popup-${type}`);
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
+});
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+}

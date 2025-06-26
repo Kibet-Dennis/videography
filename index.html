@@ -1,135 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">  
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videography & Photography</title>
-    <link rel="stylesheet" href="style.css">
-</head>
- <!-- NAVIGATION BAR -->
-  <div class="navbar">
-    <h2>Guru Creations</h2>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#process">Our Process</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
 
-  <!-- PROCESS SECTION -->
-  <div class="container" id="process">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Process – Guru Creations</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
     <h1>Our Process</h1>
+
     <div class="tabs">
-      <button class="tab-btn active" onclick="showTab('photography')">Photography</button>
-      <button class="tab-btn" onclick="showTab('videography')">Videography</button>
-      <button class="tab-btn" onclick="showTab('branding')">Branding</button>
-      <button class="payment-toggle-btn" onclick="togglePayment()">Process Payment</button>
+      <button class="tab active" onclick="switchTab(event, 'photography')">Photography</button>
+      <button class="tab" onclick="switchTab(event, 'videography')">Videography</button>
+      <button class="tab" onclick="switchTab(event, 'branding')">Branding</button>
+      <button class="tab" onclick="switchTab(event, 'payments')">Payments</button>
     </div>
 
-    <!-- Tab Content: Photography -->
+    <!-- Tab Content Sections -->
     <div id="photography" class="tab-content active">
       <div class="process-grid">
-        <div class="process-step"><i class="fas fa-comments"></i><h3>Consultation</h3><p class="more-text">We plan your photography concept with vision, location, and mood board ideas.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
-        <div class="process-step"><i class="fas fa-camera-retro"></i><h3>Shoot Planning</h3><p class="more-text">We arrange lighting, schedule, and shot list before your shoot day.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
-        <div class="process-step"><i class="fas fa-edit"></i><h3>Editing</h3><p class="more-text">Post-processing and enhancement to ensure each image is flawless and on-brand.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
-        <div class="process-step"><i class="fas fa-cloud-download-alt"></i><h3>Delivery</h3><p class="more-text">We deliver polished photos in print and web formats with full usage rights.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
+        <div class="card neon-purple">
+          <h2><i class="fas fa-comments"></i> Consultation</h2>
+          <p class="more-text">We plan your photography concept with vision, location, and mood board ideas.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-orange">
+          <h2><i class="fas fa-calendar-alt"></i> Shoot Planning</h2>
+          <p class="more-text">We arrange lighting, schedule, and shot list before your shoot day.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-green">
+          <h2><i class="fas fa-camera"></i> Photography Session</h2>
+          <p class="more-text">Professional and creative execution of your photoshoot.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-blue">
+          <h2><i class="fas fa-edit"></i> Editing</h2>
+          <p class="more-text">Post-processing and enhancement to ensure each image is flawless and on-brand.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-lightgreen">
+          <h2><i class="fas fa-check-circle"></i> Delivery</h2>
+          <p class="more-text">We deliver polished photos in print and web formats with full usage rights.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
       </div>
     </div>
 
-    <!-- Tab Content: Videography -->
+    <!-- Videography Section -->
     <div id="videography" class="tab-content">
       <div class="process-grid">
-        <div class="process-step"><i class="fas fa-video"></i><h3>Pre-Production</h3><p class="more-text">Scriptwriting, scene planning, and scheduling before we roll the camera.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
-        <div class="process-step"><i class="fas fa-film"></i><h3>Shooting</h3><p class="more-text">Professional video shoot using 4K cameras, mics, and lighting kits.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
-        <div class="process-step"><i class="fas fa-scissors"></i><h3>Editing</h3><p class="more-text">We cut, color correct, sound mix, and apply transitions to create story flow.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
-        <div class="process-step"><i class="fas fa-rocket"></i><h3>Publishing</h3><p class="more-text">Delivered for YouTube, social media, or TV — complete with thumbnails.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
+        <div class="card neon-orange">
+          <h2><i class="fas fa-lightbulb"></i> Pre-Production</h2>
+          <p class="more-text">Concept development, scripting, storyboarding, and location planning.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-green">
+          <h2><i class="fas fa-video"></i> Shooting</h2>
+          <p class="more-text">Capturing cinematic footage using professional gear and crew.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-blue">
+          <h2><i class="fas fa-tools"></i> Post-Production</h2>
+          <p class="more-text">Editing, color grading, sound design, and graphics enhancement.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-lightgreen">
+          <h2><i class="fas fa-paper-plane"></i> Final Delivery</h2>
+          <p class="more-text">We deliver high-quality video in desired formats, optimized for platforms.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
       </div>
     </div>
 
-    <!-- Tab Content: Branding -->
+    <!-- Branding Section -->
     <div id="branding" class="tab-content">
       <div class="process-grid">
-        <div class="process-step"><i class="fas fa-lightbulb"></i><h3>Discovery</h3><p class="more-text">We understand your business, target audience, and values to guide the brand.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
-        <div class="process-step"><i class="fas fa-palette"></i><h3>Identity Design</h3><p class="more-text">We design logos, color systems, and visual elements that define your brand.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
-        <div class="process-step"><i class="fas fa-globe"></i><h3>Digital Setup</h3><p class="more-text">We build your online presence through websites, socials, and branded content.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
-        <div class="process-step"><i class="fas fa-handshake"></i><h3>Launch Strategy</h3><p class="more-text">We plan content calendars, funnels, and marketing to grow your brand visibility.</p><button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button></div>
+        <div class="card neon-purple">
+          <h2><i class="fas fa-search"></i> Discovery</h2>
+          <p class="more-text">Understanding your brand goals, audience, and market positioning.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-orange">
+          <h2><i class="fas fa-paint-brush"></i> Concept Design</h2>
+          <p class="more-text">We create logo concepts, typography, and brand colors for review.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-green">
+          <h2><i class="fas fa-sync"></i> Revisions</h2>
+          <p class="more-text">We refine the designs based on your feedback to reach the final product.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-blue">
+          <h2><i class="fas fa-gift"></i> Final Delivery</h2>
+          <p class="more-text">Delivery of brand assets including logos, guides, and templates.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payments Section -->
+    <div id="payments" class="tab-content">
+      <div class="process-grid">
+        <div class="card neon-orange">
+          <h2><i class="fas fa-file-invoice"></i> Quotation & Agreement</h2>
+          <p class="more-text">We provide a detailed quote and sign off on the project terms.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-green">
+          <h2><i class="fas fa-wallet"></i> Deposit</h2>
+          <p class="more-text">A 50% upfront payment is required to confirm your project slot.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-blue">
+          <h2><i class="fas fa-money-check-alt"></i> Final Payment</h2>
+          <p class="more-text">The remaining balance is due upon final delivery of your project.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        <div class="card neon-purple">
+          <h2><i class="fas fa-cogs"></i> Service Execution</h2>
+          <p class="more-text">We deliver the agreed services professionally and keep you involved with progress updates, sample reviews, and timelines.</p>
+          <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+      </div>
+
+      <!-- Choose Payment Method (Centered Card) -->
+      <div class="payment-method-wrapper">
+        <div class="payment-method-card">
+          <h2><i class="fas fa-credit-card"></i> Choose Payment Method</h2>
+          <p>Click your preferred payment method below to view details:</p>
+          <div class="payment-buttons">
+            <button class="mpesa-btn" onclick="showPopup('mpesa')">M-Pesa</button>
+            <button class="paypal-btn" onclick="showPopup('paypal')">PayPal</button>
+            <button class="bank-btn" onclick="showPopup('bank')">Bank Transfer</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-    </div>
 
-  <!-- PAYMENT SECTION -->
-  <div class="payment-section" id="payment">
- <div class="process-grid">
-      <div class="process-step">
-        <i class="fas fa-wallet"></i>
-        <h3>Quotation & Agreement</h3>
-        <p class="more-text">We begin by offering a detailed quotation outlining the cost, scope, and deliverables of the project. Once agreed, both parties sign a service agreement.</p>
-        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
-      </div>
-      <div class="process-step">
-        <i class="fas fa-money-check-alt"></i>
-        <h3>Deposit Payment</h3>
-        <p class="more-text">To initiate the project, a deposit of 50% is required. This confirms your booking and allows us to begin preparations and scheduling.</p>
-        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
-      </div>
-      <div class="process-step">
-        <i class="fas fa-people-carry"></i>
-        <h3>Service Execution</h3>
-        <p class="more-text">We deliver the agreed services professionally and keep you involved with progress updates, sample reviews, and timelines.</p>
-        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
-      </div>
-      <div class="process-step">
-        <i class="fas fa-hand-holding-usd"></i>
-        <h3>Final Payment</h3>
-        <p class="more-text">Upon approval of the final deliverables, the remaining balance is paid and the project is concluded with all files delivered to you.</p>
-        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
-      </div>
-    </div>
-    <!---- Payment Button -->
-    <div class="payment-btn-container">
-      <button class="payment-btn" onclick="window.location.href='https://pay.gurucreations.co.ke'">Make Payment</button>
-      <p class="payment-info">Click the button above to securely process your payment through our online portal.</p>
-
+  <!-- POPUPS -->
+  <div id="popup-mpesa" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('mpesa')">&times;</span>
+      <h3>M-Pesa Payment</h3>
+      <p>Go to M-Pesa → Lipa na M-Pesa → Paybill</p>
+      <p><strong>Paybill:</strong> 123456</p>
+      <p><strong>Account:</strong> Your Name or Invoice Number</p>
     </div>
   </div>
 
-  <!-- CONTACT SECTION -->
-  <div class="container" id="contact">
-    <h1>Contact Us</h1>
-    <p>For inquiries, bookings, or collaborations, please reach out to us:</p>
-    <ul>
-      <li><strong>Email:</strong> <a href="mailto:kibetdennis4136@gmail.com">kibetdennis4136@gmail.com</a></li>
-      <li><strong>Phone:</strong> <a href="tel:+254700545425">+254 700 545 425</a></li>
-      <li><strong>Address:</strong> Nairobi, Kenya</li>
-    </ul> 
+  <div id="popup-paypal" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('paypal')">&times;</span>
+      <h3>PayPal Payment</h3>
+      <p>Send payment to:</p>
+      <p><strong>Email:</strong> gurucreations@example.com</p>
+    </div>
   </div>
-  
 
-  <!-- FOOTER ICONS -->
-  <div class="footer-icons">
-    <a href="mailto:kibetdennis4136@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://instagram.com/yourprofile" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://facebook.com/denniskibet" title="Facebook"><i class="fab fa-facebook"></i></a>
-    <a href="https://linkedin.com/company/yourprofile" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://x.com/@Dennis_2kibet" title="X"><img src="https://upload.wikimedia.org/wikipedia/commons/9/98/X_logo_2023.svg" alt="X"></a>
-    <a href="https://twitch.tv/yourprofile" title="Twitch"><i class="fab fa-twitch"></i></a>
-    <a href="https://Telegram.me/yourprofile" title="Telegram"><i class="fab fa-telegram"></i></a>
-    <a href="https://youtube.com/@gurucreationltd" title="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="https://tiktok.com/@yourprofile" title="TikTok"><i class="fab fa-tiktok"></i></a>
-    <a href="https://github.com/Kibet-Dennis" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://kibet-dennis.github.io/guru-creations/" title="Website"><i class="fas fa-globe"></i></a>
-    <a href="https://snapchat.com/yourprofile" title="Snapchat"><i class="fab fa-snapchat"></i></a>
-    <a href="https://wa.me/254700545425" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <div id="popup-bank" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('bank')">&times;</span>
+      <h3>Bank Transfer</h3>
+      <p><strong>Bank:</strong> XYZ Bank</p>
+      <p><strong>Account Number:</strong> 00123456789</p>
+      <p><strong>Account Name:</strong> Guru Creations</p>
+    </div>
   </div>
-  <!-- FOOTER -->
-  <div class="footer"><center>
-    <footer>
-      <p>&copy; 2024 Guru Creations. All rights reserved.</p>
-      <p>Designed by <a href="https://kibet-dennis.github.io/guru-creations/">Dennis Kibet</a></p>
-    </footer>
-  </center></div>
- </div>
-    <script src="script.js"></script> 
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Guru Creations. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-</html> 
+</html>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
