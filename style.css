@@ -1,5 +1,4 @@
-
-body {
+ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: url('https://images.unsplash.com/photo-1516728778615-2d590ea1856f?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
@@ -138,15 +137,7 @@ h1 {
   color: white;
   font-size: 1.4em;
   text-decoration: none;
-}
-.footer-icons a img {
-  width: 1.1em; /* Match size with font-based icons */
-  height: 1.1em;
-  vertical-align: middle; /* Align better with other icons */
-  /* This filter will turn the black SVG white */
-  filter: brightness(0) invert(1);
-}
-
+  transition: color 0.3s ease;}
 @media (max-width: 600px) {
   .container {
     padding: 30px 15px;
@@ -258,4 +249,40 @@ h1 {
 #payment .method img {
   max-width: 100px;
   margin-bottom: 10px;
+}
+.payment-section {
+  background-color: #f3f3f3;
+  padding: 40px;
+  text-align: center;
+}
+
+.payment-section h2 {
+  color: #1a1a1a;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.payment-section p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.payment-btn {
+  padding: 12px 24px;
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.payment-btn:hover {
+  background-color: #005bb5;
+}
+.payment-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.5);
 }

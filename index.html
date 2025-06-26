@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">  
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guru Creations – Our Process</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preload" href="script.js" as="script">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videography & Photography</title>
+    <link rel="stylesheet" href="style.css">
 </head>
- <body>
-  <!-- NAVIGATION BAR -->
+ <!-- NAVIGATION BAR -->
   <div class="navbar">
     <h2>Guru Creations</h2>
     <ul>
@@ -23,9 +20,9 @@
   <div class="container" id="process">
     <h1>Our Process</h1>
     <div class="tabs">
-      <button class="tab-btn active" data-tab="photography">Photography</button>
-      <button class="tab-btn" data-tab="videography">Videography</button>
-      <button class="tab-btn" data-tab="branding">Branding</button>
+      <button class="tab-btn active" onclick="showTab('photography')">Photography</button>
+      <button class="tab-btn" onclick="showTab('videography')">Videography</button>
+      <button class="tab-btn" onclick="showTab('branding')">Branding</button>
       <button class="payment-toggle-btn" onclick="togglePayment()">Process Payment</button>
     </div>
 
@@ -59,6 +56,7 @@
       </div>
     </div>
   </div>
+    </div>
 
   <!-- PAYMENT SECTION -->
   <div class="payment-section" id="payment">
@@ -88,6 +86,25 @@
         <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
       </div>
     </div>
+    <!---- Payment Button -->
+    <div class="payment-btn-container">
+      <button class="payment-btn" onclick="window.location.href='https://pay.gurucreations.co.ke'">Make Payment</button>
+      <p class="payment-info">Click the button above to securely process your payment through our online portal.</p>
+
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div class="container" id="contact">
+    <h1>Contact Us</h1>
+    <p>For inquiries, bookings, or collaborations, please reach out to us:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:kibetdennis4136@gmail.com">kibetdennis4136@gmail.com</a></li>
+      <li><strong>Phone:</strong> <a href="tel:+254700545425">+254 700 545 425</a></li>
+      <li><strong>Address:</strong> Nairobi, Kenya</li>
+    </ul> 
+  </div>
+  
 
   <!-- FOOTER ICONS -->
   <div class="footer-icons">
@@ -105,40 +122,14 @@
     <a href="https://snapchat.com/yourprofile" title="Snapchat"><i class="fab fa-snapchat"></i></a>
     <a href="https://wa.me/254700545425" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
-  <script src="script.js"></script>
-  <script>
-    // Function to show the selected tab content
-    function showTab(tabName) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => {
-        tab.classList.remove('active');
-      });
-      document.getElementById(tabName).classList.add('active');
-
-      const buttons = document.querySelectorAll('.tab-btn');
-      buttons.forEach(button => {
-        button.classList.remove('active');
-      });
-      document.querySelector(`.tab-btn[onclick="showTab('${tabName}')"]`).classList.add('active');
-    }
-
-    // Function to toggle read more text
-    function toggleReadMore(button) {
-      const moreText = button.previousElementSibling;
-      if (moreText.style.display === 'block') {
-        moreText.style.display = 'none';
-        button.textContent = 'Read More';
-      } else {
-        moreText.style.display = 'block';
-        button.textContent = 'Read Less';
-      }
-    }
-
-    // Function to toggle payment section visibility
-    function togglePayment() {
-      const paymentSection = document.getElementById('payment');
-      paymentSection.classList.toggle('active');
-    }
-  </script>
+  <!-- FOOTER -->
+  <div class="footer"><center>
+    <footer>
+      <p>&copy; 2024 Guru Creations. All rights reserved.</p>
+      <p>Designed by <a href="https://kibet-dennis.github.io/guru-creations/">Dennis Kibet</a></p>
+    </footer>
+  </center></div>
+ </div>
+    <script src="script.js"></script> 
 </body>
-</html>
+</html> 
