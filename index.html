@@ -8,9 +8,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="theme-toggle">
+  <label class="switch">
+    <input type="checkbox" id="themeSwitch">
+    <span class="slider round"></span>
+  </label>
+  <span class="mode-label">Dark Mode</span>
+</div>
+
   <div class="container">
     <h1>Our Process</h1>
-
+    <p><center><b>At Guru Creations, we believe in a structured yet flexible approach to delivering exceptional results. Our process is designed to ensure clarity, collaboration, and creativity at every step.Whether you're looking for stunning photography, engaging videography, impactful branding, or seamless streaming solutions, our process is tailored to meet your unique needs.</b></center></p>
     <div class="tabs">
       <button class="tab" onclick="switchTab(event, 'streaming')">Streaming</button>
       <button class="tab active" onclick="switchTab(event, 'photography')">Photography</button>
@@ -26,7 +34,7 @@
           <h2><i class="fas fa-microphone"></i> Consultation</h2>
           <p class="more-text">
             We discuss your streaming needs, platform, and audience.
-            <span class="extra-content" style="display: none;">
+            <span class="extra-content" >
               We take time to understand your goals—whether you're building community, growing your brand, or monetizing content. We advise on the best platform and tools to deliver high-quality streams that resonate and convert.
             </span>
           </p>
@@ -272,38 +280,42 @@
     </div>
   </div>
 
-  <!-- Popups -->
-  <div id="popup-mpesa" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('mpesa')">&times;</span>
-      <h3>M-Pesa Payment</h3>
-      <p>Go to M-Pesa → Lipa na M-Pesa → Paybill</p>
-      <p><strong>Paybill:</strong> 123456</p>
-      <p><strong>Account:</strong> Your Name or Invoice Number</p>
-    </div>
+ <!-- Popups -->
+<div id="popup-mpesa" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup('mpesa')">&times;</span>
+    <h3>M-Pesa Payment</h3>
+    <p>Go to M-Pesa → Lipa na M-Pesa → Paybill</p>
+    <p><strong>Paybill:</strong> 123456</p>
+    <p><strong>Account:</strong> Your Name or Invoice Number</p>
   </div>
- <div id="popup-paypal" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('paypal')">&times;</span>
-      <h3>PayPal Payment</h3>
-      <p>Send payment to:</p>
-      <p><strong>Email:</strong> gurucreations@example.com</p>
-    </div>
-  </div>
- <div id="popup-bank" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('bank')">&times;</span>
-      <h3>Bank Transfer</h3>
-      <p><strong>Bank:</strong> XYZ Bank</p>
-      <p><strong>Account No.:</strong> 00123456789</p>
-      <p><strong>Account Name:</strong> Guru Creations</p>
-    </div>
-  </div>
-   <footer>
-    <p>Created by <strong>Kibet Dennis</strong></p>
-    <p>&copy; 2025 Guru Creations. All rights reserved.</p>
-   </footer>
+</div>
 
+<div id="popup-paypal" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup('paypal')">&times;</span>
+    <h3>PayPal Payment</h3>
+    <p>Send payment to:</p>
+    <p><strong>Email:</strong> gurucreations@example.com</p>
+  </div>
+</div>
+
+<div id="popup-bank" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup('bank')">&times;</span>
+    <h3>Bank Transfer</h3>
+    <p><strong>Bank:</strong> XYZ Bank</p>
+    <p><strong>Account No.:</strong> 00123456789</p>
+    <p><strong>Account Name:</strong> Guru Creations</p>
+  </div>
+</div>
+
+  <footer class="site-footer">
+  <div class="footer-content">
+    <p>Created with ❤️ by <strong>Kibet Dennis</strong></p>
+    <p>&copy; <span id="year"></span> Guru Creations. All rights reserved.</p>
+  </div>
+</footer>
   <script src="script.js"></script>
 </body>
 </html>

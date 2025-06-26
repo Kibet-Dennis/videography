@@ -1,39 +1,29 @@
-// Tab Switching Function
-function switchTab(evt, tabName) {
-  // Hide all tab content
-  const tabContents = document.querySelectorAll(".tab-content");
-  tabContents.forEach(tab => tab.classList.remove("active"));
-
-  // Remove 'active' from all tab buttons
-  const tabButtons = document.querySelectorAll(".tab");
-  tabButtons.forEach(btn => btn.classList.remove("active"));
-
-  // Show the selected tab content and set button to active
-  const selectedTab = document.getElementById(tabName);
-  if (selectedTab) selectedTab.classList.add("active");
-
-  evt.currentTarget.classList.add("active");
-}
-
-function toggleReadMore(button) {
-  // Close all other expanded sections
+function toggleReadMore(btn) {
+  const card = btn.closest('.card');
   const allCards = document.querySelectorAll('.card');
-  allCards.forEach(card => {
-    if (card.contains(button)) return; // skip the one that was clicked
-    const extraContent = card.querySelector('.extra-content');
-    if (extraContent) extraContent.style.display = 'none';
-    const btn = card.querySelector('.read-more-btn');
-    if (btn) btn.textContent = 'Read More';
+
+  // Collapse other cards
+  allCards.forEach(c => {
+    if (c !== card) {
+      c.classList.remove('expanded');
+      const otherBtn = c.querySelector('.read-more-btn');
+      if (otherBtn) otherBtn.textContent = "Read More";
+    }
   });
 
-  // Toggle the current one
-  const moreText = button.previousElementSibling.querySelector('.extra-content');
-  if (moreText) {
-    const isVisible = moreText.style.display === 'block';
-    moreText.style.display = isVisible ? 'none' : 'block';
-    button.textContent = isVisible ? 'Read More' : 'Read Less';
-  }
+  // Toggle current card
+  card.classList.toggle('expanded');
+  btn.textContent = card.classList.contains('expanded') ? "Read Less" : "Read More";
 }
+
+function switchTab(event, tabId) {
+  document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+  event.target.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
 
 
 // Show Payment Popup
@@ -55,3 +45,46 @@ window.onclick = function(event) {
     }
   });
 };
+function showPopup(id) {
+  document.getElementById(`popup-${id}`).style.display = 'flex';
+}
+
+function closePopup(id) {
+  document.getElementById(`popup-${id}`).style.display = 'none';
+}
+// Set current year in footer
+document.addEventListener("DOMContentLoaded", function () {
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+});
+const switchBtn = document.getElementById("themeSwitch");
+
+switchBtn.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
+
+  // Save preference in localStorage
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+});
+
+// Load saved theme on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    document.getElementById("themeSwitch").checked = true;
+  }
+});
+// Load preference
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    document.getElementById("themeSwitch").checked = true;
+  }
+});
