@@ -6,9 +6,9 @@
   <title>Guru Creations – Our Process</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="script.js" as="script">
 </head>
-<body>
-
+ <body>
   <!-- NAVIGATION BAR -->
   <div class="navbar">
     <h2>Guru Creations</h2>
@@ -23,9 +23,9 @@
   <div class="container" id="process">
     <h1>Our Process</h1>
     <div class="tabs">
-      <button class="tab-btn active" onclick="showTab('photography')">Photography</button>
-      <button class="tab-btn" onclick="showTab('videography')">Videography</button>
-      <button class="tab-btn" onclick="showTab('branding')">Branding</button>
+      <button class="tab-btn active" data-tab="photography">Photography</button>
+      <button class="tab-btn" data-tab="videography">Videography</button>
+      <button class="tab-btn" data-tab="branding">Branding</button>
       <button class="payment-toggle-btn" onclick="togglePayment()">Process Payment</button>
     </div>
 
@@ -59,7 +59,6 @@
       </div>
     </div>
   </div>
-    </div>
 
   <!-- PAYMENT SECTION -->
   <div class="payment-section" id="payment">
@@ -106,10 +105,7 @@
     <a href="https://snapchat.com/yourprofile" title="Snapchat"><i class="fab fa-snapchat"></i></a>
     <a href="https://wa.me/254700545425" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
-  <link rel="script.preload" href="script.js" as="script">
   <script src="script.js"></script>
-</body>
-</html>
   <script>
     // Function to show the selected tab content
     function showTab(tabName) {
@@ -144,3 +140,5 @@
       paymentSection.classList.toggle('active');
     }
   </script>
+</body>
+</html>

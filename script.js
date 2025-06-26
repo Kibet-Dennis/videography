@@ -1,16 +1,25 @@
-// Toggle tab content visibility
+document.addEventListener('DOMContentLoaded', () => {
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      showTab(button.dataset.tab);
+    });
+  });
+});
+
 function showTab(tabId) {
-  const tabs = document.querySelectorAll(".tab-content");
-  const buttons = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
+  const tabButtons = document.querySelectorAll(".tab-btn");
 
-  tabs.forEach(tab => tab.classList.remove("active"));
-  buttons.forEach(btn => btn.classList.remove("active"));
+  tabContents.forEach(tab => tab.classList.remove("active"));
+  tabButtons.forEach(btn => btn.classList.remove("active"));
 
-  document.getElementById(tabId).classList.add("active");
-  document.querySelector(`.tab-btn[onclick="showTab('${tabId}')"]`).classList.add("active");
+  document.getElementById(tabId)?.classList.add("active");
+  document.querySelector(`.tab-btn[data-tab='${tabId}']`)?.classList.add("active");
 
   // Hide payment section when switching tabs
-  document.getElementById("payment").style.display = "none";
+  document.getElementById("payment").classList.remove("active");
 }
 
 // Toggle "Read More" text visibility
@@ -24,7 +33,7 @@ function toggleReadMore(button) {
 
   if (!isShown) {
     paragraph.classList.add("show");
-    button.textContent = "^";
+    button.textContent = "Read Less";
   }
 }
 
@@ -34,8 +43,8 @@ function togglePayment() {
   const isVisible = paymentSection.style.display === "block";
 
   // Hide all tab content
-  document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
-  document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+  document.querySelectorAll(".tab-content.active").forEach(tab => tab.classList.remove("active"));
+  document.querySelectorAll(".tab-btn.active").forEach(btn => btn.classList.remove("active"));
 
-  paymentSection.style.display = isVisible ? "none" : "block";
+  paymentSection.classList.toggle('active');
 }

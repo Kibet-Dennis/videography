@@ -139,6 +139,13 @@ h1 {
   font-size: 1.4em;
   text-decoration: none;
 }
+.footer-icons a img {
+  width: 1.1em; /* Match size with font-based icons */
+  height: 1.1em;
+  vertical-align: middle; /* Align better with other icons */
+  /* This filter will turn the black SVG white */
+  filter: brightness(0) invert(1);
+}
 
 @media (max-width: 600px) {
   .container {
