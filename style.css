@@ -1,31 +1,36 @@
-/* General Reset */
+/* ===== General Reset ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(120deg, #0f0f0f, #1a1a1a);
-  color: #fff;
+html, body {
   min-height: 100vh;
   overflow-x: hidden;
 }
 
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #0f0f0f, #1a1a1a);
+  color: #fff;
+}
+
+/* ===== Container ===== */
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 2rem;
+  overflow-x: hidden;
 }
 
-/* Tabs */
+/* ===== Tabs ===== */
 .tabs {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .tab {
@@ -33,8 +38,8 @@ body {
   color: #fff;
   border: none;
   padding: 0.8rem 1.5rem;
-  cursor: pointer;
   border-radius: 30px;
+  cursor: pointer;
   transition: background 0.3s;
 }
 
@@ -43,7 +48,7 @@ body {
   background: #00bcd4;
 }
 
-/* Tab content */
+/* ===== Tab Content ===== */
 .tab-content {
   display: none;
   animation: fadeIn 0.5s ease-in-out;
@@ -53,19 +58,7 @@ body {
   display: block;
 }
 
-@keyframes popupSlide {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* Cards */
+/* ===== Process Cards ===== */
 .process-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -76,7 +69,6 @@ body {
   background: #222;
   padding: 1.5rem;
   border-radius: 15px;
-  position: relative;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s;
 }
@@ -114,14 +106,14 @@ body {
   color: #fff;
 }
 
-/* Neon Colors */
-.neon-purple { border-left: 4px solid #9b59b6; }
-.neon-orange { border-left: 4px solid #e67e22; }
-.neon-green { border-left: 4px solid #2ecc71; }
-.neon-blue { border-left: 4px solid #3498db; }
+/* ===== Neon Accent Borders ===== */
+.neon-purple     { border-left: 4px solid #9b59b6; }
+.neon-orange     { border-left: 4px solid #e67e22; }
+.neon-green      { border-left: 4px solid #2ecc71; }
+.neon-blue       { border-left: 4px solid #3498db; }
 .neon-lightgreen { border-left: 4px solid #1abc9c; }
 
-/* Transparent Card Centered */
+/* ===== Payment Section ===== */
 .payment-method-wrapper {
   display: flex;
   justify-content: center;
@@ -138,7 +130,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Payment Buttons */
 .payment-buttons {
   margin-top: 1.5rem;
   display: flex;
@@ -147,29 +138,19 @@ body {
   flex-wrap: wrap;
 }
 
-.mpesa-btn {
-  background: #34b233;
+.mpesa-btn, .paypal-btn, .bank-btn {
   color: white;
   padding: 0.7rem 1.4rem;
-  border: none;
   border-radius: 10px;
   cursor: pointer;
-}
-.paypal-btn {
-  background: #003087;
-  color: white;
-  padding: 0.7rem 1.4rem;
   border: none;
-  border-radius: 10px;
-  cursor: pointer;
 }
+
+.mpesa-btn { background: #34b233; }
+.paypal-btn { background: #003087; }
 .bank-btn {
   background: #222;
-  color: white;
-  padding: 0.7rem 1.4rem;
   border: 1px solid #555;
-  border-radius: 10px;
-  cursor: pointer;
 }
 
 .mpesa-btn:hover,
@@ -178,6 +159,7 @@ body {
   opacity: 0.9;
 }
 
+/* ===== Payment Popup ===== */
 .popup {
   display: none;
   position: fixed;
@@ -197,10 +179,8 @@ body {
   width: 90%;
   position: relative;
   box-shadow: 0 0 20px rgba(0,255,255,0.3);
-  transform: translateY(0);
   animation: popupSlide 0.4s ease;
 }
-
 
 .popup-content h3 {
   margin-bottom: 1rem;
@@ -220,7 +200,7 @@ body {
   cursor: pointer;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 2rem 0;
@@ -229,6 +209,8 @@ footer {
   font-size: 0.9rem;
   color: #aaa;
 }
+
+/* ===== Dark Mode Toggle ===== */
 #darkToggle {
   position: fixed;
   top: 1rem;
@@ -242,6 +224,7 @@ footer {
   z-index: 10000;
 }
 
+/* ===== Dark Theme Adjustments ===== */
 body.dark {
   background: #f5f5f5;
   color: #111;
@@ -263,6 +246,20 @@ body.dark .tab.active {
   background: #00bcd4;
   color: #fff;
 }
+
+/* ===== Animations ===== */
+@keyframes popupSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   .tabs {
     flex-direction: column;

@@ -22,7 +22,7 @@ function toggleReadMore(button) {
   });
 
   paragraph.classList.toggle("show");
-  button.textContent = paragraph.classList.contains("show") ? "Show Less" : "Read More";
+  button.textContent = paragraph.classList.contains("show") ? "^^" : "Read More";
 }
 function showPopup(type) {
   document.getElementById(`popup-${type}`).style.display = 'block';
