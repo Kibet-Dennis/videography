@@ -1,0 +1,254 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://images.unsplash.com/photo-1516728778615-2d590ea1856f?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 15px 30px;
+  color: white;
+}
+.navbar h2 {
+  margin: 0;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 80px auto 40px;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.8em;
+  margin-bottom: 30px;
+}
+
+.tabs {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.tabs button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1em;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.tabs button.active {
+  background: #0056b3;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.process-step {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+.process-step:hover {
+  transform: translateY(-8px);
+}
+.process-step i {
+  font-size: 2.5em;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+.process-step h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.process-step p {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+  max-height: 70px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.process-step p.show {
+  max-height: 300px;
+}
+.read-more-btn {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #007bff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 25px 10px;
+}
+.footer-icons a {
+  color: white;
+  font-size: 1.4em;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 30px 15px;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tabs button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Payment Process Tab Specific Styling */
+#payment .process-step {
+  border-left: 5px solid #007bff;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+#payment .process-step:hover {
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.2);
+}
+
+#payment .process-step i {
+  color: #28a745;
+  transition: transform 0.3s ease;
+}
+
+#payment .process-step:hover i {
+  transform: scale(1.2);
+}
+
+#payment .process-step h3 {
+  color: #333;
+  font-weight: bold;
+}
+
+#payment .read-more-btn {
+  color: #28a745;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+#payment .read-more-btn:hover {
+  color: #218838;
+}
+
+#payment .process-grid {
+  animation: slideUp 0.6s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Payment Options Section */
+#payment .payment-options {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  text-align: center;
+}
+
+#payment .payment-options h4 {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+#payment .payment-methods {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+#payment .method {
+  flex: 1 1 200px;
+  background: #ffffff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+#payment .method:hover {
+  transform: scale(1.03);
+}
+
+#payment .method h5 {
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+#payment .method p {
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 5px;
+}
+#payment .method img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
